@@ -1,0 +1,96 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/1/Mux16.hdl
+/**
+ * 16-bit multiplexor: 
+ * for i = 0, ..., 15:
+ * if (sel = 0) out[i] = a[i], else out[i] = b[i]
+ */
+CHIP Mux16 {
+    IN a[16], b[16], sel;
+    OUT out[16];
+
+    PARTS:
+    Not(in=sel, out=notSel);
+
+    // Pin 0
+    And(a=b[0], b=sel, out=b0AndSel);
+    And(a=a[0], b=notSel, out=a0AndNotSel);
+    Or(a=b0AndSel, b=a0AndNotSel, out=out[0]);
+
+    // Pin 1
+    And(a=b[1], b=sel, out=b1AndSel);
+    And(a=a[1], b=notSel, out=a1AndNotSel);
+    Or(a=b1AndSel, b=a1AndNotSel, out=out[1]);
+
+    // Pin 2
+    And(a=b[2], b=sel, out=b2AndSel);
+    And(a=a[2], b=notSel, out=a2AndNotSel);
+    Or(a=b2AndSel, b=a2AndNotSel, out=out[2]);
+
+    // Pin 3
+    And(a=b[3], b=sel, out=b3AndSel);
+    And(a=a[3], b=notSel, out=a3AndNotSel);
+    Or(a=b3AndSel, b=a3AndNotSel, out=out[3]);
+
+    // Pin 4
+    And(a=b[4], b=sel, out=b4AndSel);
+    And(a=a[4], b=notSel, out=a4AndNotSel);
+    Or(a=b4AndSel, b=a4AndNotSel, out=out[4]);
+
+    // Pin 5
+    And(a=b[5], b=sel, out=b5AndSel);
+    And(a=a[5], b=notSel, out=a5AndNotSel);
+    Or(a=b5AndSel, b=a5AndNotSel, out=out[5]);
+
+    // Pin 6
+    And(a=b[6], b=sel, out=b6AndSel);
+    And(a=a[6], b=notSel, out=a6AndNotSel);
+    Or(a=b6AndSel, b=a6AndNotSel, out=out[6]);
+
+    // Pin 7
+    And(a=b[7], b=sel, out=b7AndSel);
+    And(a=a[7], b=notSel, out=a7AndNotSel);
+    Or(a=b7AndSel, b=a7AndNotSel, out=out[7]);
+
+    // Pin 8
+    And(a=b[8], b=sel, out=b8AndSel);
+    And(a=a[8], b=notSel, out=a8AndNotSel);
+    Or(a=b8AndSel, b=a8AndNotSel, out=out[8]);
+
+    // Pin 9
+    And(a=b[9], b=sel, out=b9AndSel);
+    And(a=a[9], b=notSel, out=a9AndNotSel);
+    Or(a=b9AndSel, b=a9AndNotSel, out=out[9]);
+
+    // Pin 10
+    And(a=b[10], b=sel, out=b10AndSel);
+    And(a=a[10], b=notSel, out=a10AndNotSel);
+    Or(a=b10AndSel, b=a10AndNotSel, out=out[10]);
+
+    // Pin 11
+    And(a=b[11], b=sel, out=b11AndSel);
+    And(a=a[11], b=notSel, out=a11AndNotSel);
+    Or(a=b11AndSel, b=a11AndNotSel, out=out[11]);
+
+    // Pin 12
+    And(a=b[12], b=sel, out=b12AndSel);
+    And(a=a[12], b=notSel, out=a12AndNotSel);
+    Or(a=b12AndSel, b=a12AndNotSel, out=out[12]);
+
+    // Pin 13
+    And(a=b[13], b=sel, out=b13AndSel);
+    And(a=a[13], b=notSel, out=a13AndNotSel);
+    Or(a=b13AndSel, b=a13AndNotSel, out=out[13]);
+
+    // Pin 14
+    And(a=b[14], b=sel, out=b14AndSel);
+    And(a=a[14], b=notSel, out=a14AndNotSel);
+    Or(a=b14AndSel, b=a14AndNotSel, out=out[14]);
+
+    // Pin 15
+    And(a=b[15], b=sel, out=b15AndSel);
+    And(a=a[15], b=notSel, out=a15AndNotSel);
+    Or(a=b15AndSel, b=a15AndNotSel, out=out[15]);
+}
